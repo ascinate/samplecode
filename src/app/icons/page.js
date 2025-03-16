@@ -10,7 +10,7 @@ const IconsPage = () => {
       try {
         const response = await fetch('https://iconsguru.com/admin/api/icons');
         const data = await response.json();
-        setIcons(data.icons);
+        setIcons(data.icons); // Assuming the response contains an array of icons in `icons`
       } catch (error) {
         console.error('Error fetching icons:', error);
       }
@@ -23,7 +23,9 @@ const IconsPage = () => {
     <div>
       <h1>Icons List</h1>
       <div className="svg-container">
-      
+        {icons.length === 0 ? (
+          <p>Icons Coming.</p>
+        ) : (
           icons.map((icon) => (
           <a href="#" key={icon.id} class="svg-item" dangerouslySetInnerHTML={{ __html: icon.icon_svg }}>
 
@@ -32,7 +34,7 @@ const IconsPage = () => {
         )}
       </div>
     </div>
-
+  );
 };
 
 export default IconsPage;

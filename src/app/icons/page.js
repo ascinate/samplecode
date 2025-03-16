@@ -23,9 +23,7 @@ const IconsPage = () => {
     <div>
       <h1>Icons List</h1>
       <div className="svg-container">
-        {icons.length === 0 ? (
-          <p>Loading icons...</p>
-        ) : (
+      
           icons.map((icon) => (
           <a href="#" key={icon.id} class="svg-item" dangerouslySetInnerHTML={{ __html: icon.icon_svg }}>
 
@@ -34,7 +32,7 @@ const IconsPage = () => {
         )}
       </div>
     </div>
-  );
+
 };
 
 export default IconsPage;

@@ -10,7 +10,7 @@ const IconsPage = () => {
       try {
         const response = await fetch('https://iconsguru.com/admin/api/icons');
         const data = await response.json();
-        setIcons(data.icons); // Assuming the response contains an array of icons in `icons`
+        setIcons(data.icons);
       } catch (error) {
         console.error('Error fetching icons:', error);
       }
